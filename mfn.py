@@ -299,7 +299,7 @@ class MfnModel(nn.Module):
         out       = self.fc3_256_1(eltwise_fc1)
 
         if out_feature == False:
-            return out
+            return out[:796]
         else:
             feature = eltwise_fc1.view(eltwise_fc1.size(0), -1)
             return out,feature
