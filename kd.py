@@ -36,6 +36,6 @@ test_loader = torch.utils.data.DataLoader(DataLmdb("/kaggle/working/Low_Test/Val
 distiller = ProbShift(teacher_model, student_model, train_loader, test_loader, teacher_optimizer,
                       student_optimizer, device=device)
 distiller.train_teacher(epochs=5)                                       # Train the teacher model
-distiller.train_students(epochs=5)                                      # Train the student model
+distiller.train_student(epochs=5)                                      # Train the student model
 distiller.evaluate(teacher=True)                                        # Evaluate the teacher model
 distiller.evaluate()                                                    # Evaluate the student model
