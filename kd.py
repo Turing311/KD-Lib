@@ -27,9 +27,9 @@ student_optimizer = optim.SGD(student_model.parameters(), lr=0.01)
 
 
 train_loader = torch.utils.data.DataLoader(DataLmdb("/kaggle/working/Low_Test/Train-Low_lmdb", db_size=143432, crop_size=128, flip=True, scale=0.00390625),
-    batch_size=128, shuffle=True)
+    batch_size=256, shuffle=True)
 test_loader = torch.utils.data.DataLoader(DataLmdb("/kaggle/working/Low_Test/Valid-Low_lmdb", db_size=7939, crop_size=128, flip=False, scale=0.00390625, random=False),
-    batch_size=128, shuffle=False)
+    batch_size=256, shuffle=False)
 
 # Train using KD_Lib
 
