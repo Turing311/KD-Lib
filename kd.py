@@ -16,13 +16,13 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Define student and teacher models
 
 teacher_model = MfnModel().cuda()
-teacher_model.load_state_dict( torch.load('mfn_2510.pth') )
+teacher_model.load_state_dict( torch.load('mfn_2510.pth'), strict=False )
 teacher_model.freeze()
 student_model = MfnModelMini().cuda()
 
 # Define optimizers
 
-teacher_optimizer = optim.SGD(teacher_model.fc3_256_1.parameters(), lr=0.01)
+teacher_optimizer = optim.SGD(teacher_model.fc3_256_2.parameters(), lr=0.01)
 student_optimizer = optim.SGD(student_model.parameters(), lr=0.01)
 
 
