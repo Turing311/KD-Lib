@@ -280,7 +280,7 @@ class MfnModelMini(nn.Module):
         slice_fc1, slice_fc2       = bn_fc1_512[:, :256], bn_fc1_512[:, 256:]
         eltwise_fc1 = torch.max(slice_fc1, slice_fc2)
         out       = self.fc3_256_1(eltwise_fc1)
-        return out[:, :796]
+        return out[:, :797]
 
     @staticmethod
     def __conv(dim, name, **kwargs):
