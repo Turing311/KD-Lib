@@ -309,7 +309,7 @@ class MfnModel(nn.Module):
         for name, p in self.named_parameters():
             p.requires_grad = False
 
-        for name, p in self.fc3_256_1.named_parameters():
+        for name, p in self.fc3_256_2.named_parameters():
             p.requires_grad = True
     
     @staticmethod
